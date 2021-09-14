@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import statssave
 import random
 def getword():
@@ -38,7 +39,7 @@ def drawHangman(hangmanerrors, word, guesses):
             newword += "_"
     if newword == word:
         print("You Won!")
-        saveData(playerPicker())
+        statssave.addPlayerGame(playerPicker(), True)
         quit()
     print(": errors")
     print(newword)
@@ -55,22 +56,24 @@ def createPlayerMenu():
         createPlayerMenu()
     
 def playerPicker():
-    playerin = input("input player name")
+    playerin = input("input player name: \n")
     return playerin
 def MenuScreen():
-    menuinput = input("play(p), quit(q), playerstats(s), createplayer(c)")
-    if menuinput == 'p':
+    menuinput = input("play(p), quit(q), playerstats(s), createplayer(c): \n")
+    if menuinput == "p":
         gameLoop()
         return
-    elif menuinput == 'q':
+    elif menuinput == "q":
         quit()
         return
-    elif menuinput == 's':
+    elif menuinput == "s":
         statsMenu()
         return
-    elif menuinput == 'c':
+    elif menuinput == "c":
         createPlayerMenu()
         return
+    else:
+        MenuScreen()
     return
 def getInput():
     input2 = input('input a letter:  \n')
@@ -90,6 +93,6 @@ def gameLoop():
         guesses2 += getInput()
 
 def saveData(playa):
-    statssave.updatePlayer(playa)
+    statssave.updatePlayer(playa, 100, 1,1)
     return
 MenuScreen()

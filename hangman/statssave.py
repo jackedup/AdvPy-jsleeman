@@ -7,10 +7,7 @@ from os import name, stat
 
 data = {}
 
-#if file not found{
-#data['players'] = []
-#}
-#else{
+
 statfile = open('playerstats.json', 'r')
 jsondata = json.load(statfile)
 statfile.close()
@@ -21,7 +18,6 @@ if "players" not in jsondata:
 def updatePlayer(name, winpercent, gamesplayed, wins):
 	for playerobj in jsondata['players']:
 		for player in playerobj:
-			print (player)
 			if player == name:
 				jsondata['players'].remove(playerobj)
 				jsondata['players'].append({
@@ -38,21 +34,30 @@ def updatePlayer(name, winpercent, gamesplayed, wins):
 
 	print("error, player not found")
 def getPlayer(name):
+	ret = " "
 	for playerobj in jsondata['players']:
-		for player in playerobj[name]:
-			
-			
+		for player in playerobj:
+			if player == name :
+				return playerobj[player]
+	return 0
 				
 				
-getPlayer("jack")
 def addPlayerGame(name, win):
-	getPlayer()
+	player = getPlayer(name)
+	player['games played'] +=1
+	if win:
+		player['wins'] +=1
+	winratio = player['wins']/player['games played']
+	updatePlayer(name, winratio, player['games played'], player['wins'])
 	return
+if (not getPlayer("jack")):
+	print("error")
+addPlayerGame("jack", True)
 def addPlayer(name):
 	for playerobj in jsondata['players']:
 		for player in playerobj:
-			#print (player)
 			if player == name:
+				print("error: player already exists")
 				return 0
 	jsondata['players'].append({
 		name : {
@@ -66,5 +71,4 @@ def addPlayer(name):
 	with open('playerstats.json', 'w') as outfile:
 		json.dump(jsondata,outfile)
 	return True
-#getPlayer('name')
 
