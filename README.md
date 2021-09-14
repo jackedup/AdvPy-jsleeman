@@ -25,4 +25,15 @@
 | Location | https://github.com/jackedup/AdvPy-jsleeman/tree/main/test |
 | Self Grade | 100/100 |
 | Notes | Did the test setup and hello world |
-]
+
+### Assignment #1
+
+| Name | Value |
+| :--- | :--- |
+| Name | Project 1: Hangman |
+| Description | A basic Hangman Game|
+| Due Date | 30-Sep-21 |
+| Status | Nearly Done |
+| Location | https://github.com/jackedup/AdvPy-jsleeman/tree/main/hangman |
+| Self Grade | 95/100 |
+| Notes | Simple Hangman game that saves stats to JSON |
