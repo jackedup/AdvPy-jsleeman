@@ -34,7 +34,6 @@ def updatePlayer(name, winpercent, gamesplayed, wins):
 
 	print("error, player not found")
 def getPlayer(name):
-	ret = " "
 	for playerobj in jsondata['players']:
 		for player in playerobj:
 			if player == name :
@@ -43,16 +42,20 @@ def getPlayer(name):
 				
 				
 def addPlayerGame(name, win):
+	if (win):
+		 print("You Won!")
+	else:
+		print("You Failed!")
 	player = getPlayer(name)
 	player['games played'] +=1
 	if win:
 		player['wins'] +=1
 	winratio = player['wins']/player['games played']
 	updatePlayer(name, winratio, player['games played'], player['wins'])
+	input("Enter to continue")
 	return
 if (not getPlayer("jack")):
 	print("error")
-addPlayerGame("jack", True)
 def addPlayer(name):
 	for playerobj in jsondata['players']:
 		for player in playerobj:
