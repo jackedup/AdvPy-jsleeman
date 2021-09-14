@@ -36,4 +36,4 @@
 | Status | Nearly Done |
 | Location | https://github.com/jackedup/AdvPy-jsleeman/tree/main/hangman |
 | Self Grade | 95/100 |
-| Notes | Simple Hangman game that saves stats to JSON |
+| Notes | Simple Hangman game that saves stats to JSON, make sure you have all files including json starter file in order to run |
