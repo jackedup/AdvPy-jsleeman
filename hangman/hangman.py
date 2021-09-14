@@ -1,29 +1,95 @@
-# Import the necessary packages
-from consolemenu import *
-from consolemenu.items import *
+import statssave
+import random
+def getword():
+    wordfile = open('dict.txt', 'r')
+    lines = wordfile.readlines()
+    for line in lines:
+      line = line.rstrip()
+    return random.choice(lines)
+def drawHangman(hangmanerrors, word, guesses):
+    newword = ""
+#     """ """ print("""
+#                      ┌───────────────────────┐
+#                      │                       │
+#                      │                       │
+#                      │                       │
+#                    xxxx                      │
+#                   x    x                     │
+#                   x    x                     │
+#                    xxxx                      │
+#                     x                        │
+#                xxxxxxxxxxxxx                 │
+#             xxxx    x      xx                │
+#            xx       x                        │
+#                     x                        │
+#                    xx                      xx│
+#                  xxx xx                    xx│
+#                 xx    xxx                xxxx│
+#                 x       x               xxx  │
+#                                        xx    │
+#                                       xx     │
+#                                      xx      │
+# xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx""") 
+#     """ """
+    for i in range(len(word)):
+        if word[i] in guesses:
+            newword += word[i]
+        else:
+            newword += "_"
+    if newword == word:
+        print("You Won!")
+        saveData(playerPicker())
+        quit()
+    print(": errors")
+    print(newword)
+def statsMenu():
+    print(statsMenu)
+    return
+def createPlayerMenu():
+    pname = input("New player name: ")
+    if statssave.addPlayer(pname):
+        print("player " + pname + " created!")
+        MenuScreen()
+    else:
+        print ("player " + pname + " already exists")
+        createPlayerMenu()
+    
+def playerPicker():
+    playerin = input("input player name")
+    return playerin
+def MenuScreen():
+    menuinput = input("play(p), quit(q), playerstats(s), createplayer(c)")
+    if menuinput == 'p':
+        gameLoop()
+        return
+    elif menuinput == 'q':
+        quit()
+        return
+    elif menuinput == 's':
+        statsMenu()
+        return
+    elif menuinput == 'c':
+        createPlayerMenu()
+        return
+    return
+def getInput():
+    input2 = input('input a letter:  \n')
+    if len(input2) == 1:
+        return input2
+    else:
+        return getInput()
 
-# Create the menu
-menu = ConsoleMenu("Hangman!", "by Jack Sleeman")
+def gameLoop():
+    guesses2 = ""
+    gameword = getword()
+    gameword = gameword.strip()
 
-# Create some items
+    print(gameword)
+    while(True):
+        drawHangman(0,gameword, guesses2)
+        guesses2 += getInput()
 
-# MenuItem is the base class for all items, it doesn't do anything when selected
-menu_item = MenuItem("Menu Item")
-
-# A FunctionItem runs a Python function when selected
-function_item = FunctionItem("Call a Python function", input, ["Enter an input"])
-
-# A SelectionMenu constructs a menu from a list of strings
-selection_menu = SelectionMenu(["item1", "item2", "item3"])
-
-# A SubmenuItem lets you add a menu (the selection_menu above, for example)
-# as a submenu of another menu
-submenu_item = SubmenuItem("Submenu item", selection_menu, menu)
-
-# Once we're done creating them, we just add the items to the menu
-menu.append_item(menu_item)
-menu.append_item(function_item)
-menu.append_item(submenu_item)
-
-# Finally, we call show to show the menu and allow the user to interact
-menu.show()
+def saveData(playa):
+    statssave.updatePlayer(playa)
+    return
+MenuScreen()
