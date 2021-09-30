@@ -15,6 +15,13 @@ statfile.close()
 if "players" not in jsondata:
 	print("players not in json")
 	jsondata['players'] = []
+def deletePlayer(name):
+	for playerobj in jsondata['players']:
+		for player in playerobj:
+			if player == name:
+				jsondata['players'].remove(playerobj)
+				with open('playerstats.json', 'w') as outfile:
+					json.dump(jsondata,outfile)
 def updatePlayer(name, winpercent, gamesplayed, wins):
 	for playerobj in jsondata['players']:
 		for player in playerobj:
@@ -38,20 +45,24 @@ def getPlayer(name):
 		for player in playerobj:
 			if player == name :
 				return playerobj[player]
-	return 0
+	return -1
 				
 				
 def addPlayerGame(name, win):
+    
 	if (win):
 		 print("You Won!")
 	else:
 		print("You Failed!")
+
 	player = getPlayer(name)
-	player['games played'] +=1
+	gamesplayed = int(player['games played']) 
+	gamesplayed += 1
+	wins = player['wins'] 
 	if win:
-		player['wins'] +=1
-	winratio = player['wins']/player['games played']
-	updatePlayer(name, winratio, player['games played'], player['wins'])
+		wins +=1
+	winratio = wins/gamesplayed
+	updatePlayer(name, winratio, gamesplayed, wins)
 	input("Enter to continue")
 	return
 if (not getPlayer("jack")):
@@ -65,10 +76,10 @@ def addPlayer(name):
 	jsondata['players'].append({
 		name : {
 			'name' : name,
-			'winpercent' : '0',
-			'games played' : '0',
-			'wins' : '0',
-			'ties' : '0'
+			'winpercent' : 0,
+			'games played' : 0,
+			'wins' : 0,
+			'ties' : 0
 			}
 		})
 	with open('playerstats.json', 'w') as outfile:

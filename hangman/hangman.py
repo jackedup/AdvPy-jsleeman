@@ -46,7 +46,6 @@ def createPlayerMenu():
     pname = input("New player name: ")
     global currentPlayer
     if statssave.addPlayer(pname):
-
         print("player " + pname + " created!")
         currentPlayer = pname
         MenuScreen()
@@ -63,22 +62,37 @@ def MenuScreen():
     os.system("clear")
     print("Current Player is: " + currentPlayer)
 
-    menuinput = input("play(p), quit(q), playerstats(s), createplayer(c): \n")
+    menuinput = input("Play(p), Quit(q), Player Stats(s), Create Player(c), Choose Player: (b)\n")
     if menuinput == "p":
         if (currentPlayer == ""):
             currentPlayer = playerPicker()
-            print (currentPlayer)
-            input("press")
+        if (statssave.getPlayer(currentPlayer) == -1):
+           if (input("Player not found, create player? (y/n)") == 'y'):
+               createPlayerMenu()
+           else:
+               MenuScreen()
         gameLoop()
         return
     elif menuinput == "q":
         quit()
         return
     elif menuinput == "s":
+        if (currentPlayer == ""):
+            currentPlayer = playerPicker()
         statsMenu()
         return
     elif menuinput == "c":
         createPlayerMenu()
+        return
+    elif menuinput == "b":
+        currentPlayer = playerPicker()
+        if (statssave.getPlayer(currentPlayer) == -1):
+           if (input("Player not found, create player? (y/n)") == 'y'):
+               createPlayerMenu()
+               MenuScreen()
+           else:
+                currentPlayer = ""
+        MenuScreen()
         return
     else:
         MenuScreen()
@@ -103,4 +117,5 @@ def gameLoop():
 def saveData(playa):
     statssave.updatePlayer(playa, 100, 1,1)
     return
+
 MenuScreen()
