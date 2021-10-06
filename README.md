@@ -14,7 +14,7 @@
 
 ## Assignments
 
-### Assignment #1
+### Project 0
 
 | Name | Value |
 | :--- | :--- |
@@ -26,7 +26,7 @@
 | Self Grade | 100/100 |
 | Notes | Did the test setup and hello world |
 
-### Assignment #1
+### Project 1
 
 | Name | Value |
 | :--- | :--- |
@@ -37,3 +37,15 @@
 | Location | https://github.com/jackedup/AdvPy-jsleeman/tree/main/hangman |
 | Self Grade | 95/100 |
 | Notes | Simple Hangman game that saves stats to JSON |
+
+### Project 2
+
+| Name | Value |
+| :--- | :--- |
+| Name | Project 2: Kattis |
+| Description | 3 kattis problems were done|
+| Due Date | 16-Nov-21|
+| Status | 3 Kattis aproved submissions, but no testing was done lol |
+| Location | https://github.com/jackedup/AdvPy-jsleeman/tree/main/kattis/ |
+| Self Grade | 70/100 |
+| Notes | 3 kattis problems were done of 2.0, 1.9, and 1.8 difficulty|
