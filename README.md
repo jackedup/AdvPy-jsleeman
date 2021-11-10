@@ -45,10 +45,13 @@
 | Name | Project 2: Kattis |
 | Description | 3 kattis problems were done|
 | Due Date | 16-Nov-21|
-| Status | 3 Kattis aproved submissions, but no testing was done lol |
-| Problem 1 | https://github.com/jackedup/AdvPy-jsleeman/tree/main/kattis/anewalphabet2_0 |
-| Problem 2 | https://github.com/jackedup/AdvPy-jsleeman/tree/main/kattis/cookingwater1_9 |
-| Problem 3 | https://github.com/jackedup/AdvPy-jsleeman/tree/main/kattis/secretmessage1_8 |
+| Status | 3 Kattis aproved submissions with testing |
+| Problem| Dificulty | Git Link |
+|:---|:---|:---|
+| A New Alphabet | 2.0 | https://github.com/jackedup/AdvPy-jsleeman/tree/main/kattis/anewalphabet2_0 |
+| Cooking Water | 1.9 | https://github.com/jackedup/AdvPy-jsleeman/tree/main/kattis/cookingwater1_9 |
+| Secret Message | 1.8 | https://github.com/jackedup/AdvPy-jsleeman/tree/main/kattis/secretmessage1_8 |
+| :--- | :---|
 | Location | https://github.com/jackedup/AdvPy-jsleeman/tree/main/kattis/ |
 | Self Grade | 100/100 |
 | Notes | 3 kattis problems were done of 2.0, 1.9, and 1.8 difficulty |
