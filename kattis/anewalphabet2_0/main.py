@@ -55,7 +55,11 @@ def convertchar(ch):
 		return '2'
 	else:
 		return ch
-for line in sys.stdin:
+def eval(line):
+	result = ""			
 	for ch in line:
-		
-		print (convertchar(ch.lower()), end='')
+		result += (convertchar(ch.lower()))
+	return result
+if __name__ == '__main__':
+	for line in sys.stdin:
+		print(eval(line))
