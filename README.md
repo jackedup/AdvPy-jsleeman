@@ -46,7 +46,6 @@
 | Description | 3 kattis problems were done|
 | Due Date | 16-Nov-21|
 | Status | 3 Kattis aproved submissions with testing |
-| :--- | :---|
 | Location | https://github.com/jackedup/AdvPy-jsleeman/tree/main/kattis/ |
 | Self Grade | 100/100 |
 | Notes | 3 kattis problems were done of 2.0, 1.9, and 1.8 difficulty |
