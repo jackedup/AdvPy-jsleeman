@@ -1,6 +1,6 @@
 import sys
 
-paircount = 0;
+paircount = 0
 linenum = 0
 numberlist = []
 def getRanges(a,b):
@@ -10,6 +10,8 @@ def getRanges(a,b):
 	numberlist.append(newlist)
 
 def checkOverlap():
+	global paircount
+	global numberlist
 	for x in numberlist:
 		for y in x:
 			numb = 0
@@ -21,9 +23,22 @@ def checkOverlap():
 							return True
 							
 	return False
-line1 = True;
 
-for line in sys.stdin:
+line1 = True
+def initVars():
+	global line1
+	global linenum
+	global paircount
+	global numberlist
+	line1 = True
+	linenum = 0
+	paircount = 0
+	numberlist = []
+def eval(line):
+	global line1
+	global linenum
+	global paircount
+	global numberlist
 	if(line1):
 		paircount = int(line)
 		line1 = False
@@ -32,10 +47,16 @@ for line in sys.stdin:
 		linenum+=1
 	if(linenum == paircount):
 		if (checkOverlap()):
-			print("gunilla has a point")
+			initVars()
+			return("gunilla has a point")
 		else:
-			print("edward is right")
-		quit()
+			initVars()
+			return("edward is right")
+	return None
 
-
+if __name__ == '__main__':
+	for lin in sys.stdin:
+		result = eval(lin)
+		if (result != None):
+			print(result)
 		
