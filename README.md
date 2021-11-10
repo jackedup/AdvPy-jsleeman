@@ -46,6 +46,7 @@
 | Description | 3 kattis problems were done|
 | Due Date | 16-Nov-21|
 | Status | 3 Kattis aproved submissions with testing |
+
 | Problem| Dificulty | Git Link |
 |:---|:---|:---|
 | A New Alphabet | 2.0 | https://github.com/jackedup/AdvPy-jsleeman/tree/main/kattis/anewalphabet2_0 |
