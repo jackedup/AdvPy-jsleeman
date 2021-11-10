@@ -52,6 +52,7 @@
 | A New Alphabet | 2.0 | https://github.com/jackedup/AdvPy-jsleeman/tree/main/kattis/anewalphabet2_0 |
 | Cooking Water | 1.9 | https://github.com/jackedup/AdvPy-jsleeman/tree/main/kattis/cookingwater1_9 |
 | Secret Message | 1.8 | https://github.com/jackedup/AdvPy-jsleeman/tree/main/kattis/secretmessage1_8 |
+
 | :--- | :---|
 | Location | https://github.com/jackedup/AdvPy-jsleeman/tree/main/kattis/ |
 | Self Grade | 100/100 |
