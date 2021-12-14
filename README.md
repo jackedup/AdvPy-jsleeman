@@ -57,3 +57,20 @@
 | Secret Message | 1.8 | https://github.com/jackedup/AdvPy-jsleeman/tree/main/kattis/secretmessage1_8 |
 
 
+### Final
+
+| Name | Value |
+| :--- | :--- |
+| Name | Final Project: kattis|
+| Description | 3 kattis problems were done|
+| Due Date | 14-Dec-21|
+| Status | 3 Kattis aproved submissions with testing |
+| Location | https://github.com/jackedup/AdvPy-jsleeman/tree/main/final/ |
+| Self Grade | 100/100 |
+| Notes | 3 kattis problems were done of 2.2, 2.1, and 2.0 difficulty |
+
+| Problem| Dificulty | Git Link |
+|:---|:---|:---|
+| Above Average | 2.0 | https://github.com/jackedup/AdvPy-jsleeman/tree/main/final/aboveAverage2_0 |
+| Babalonian Numbers | 2.1 | https://github.com/jackedup/AdvPy-jsleeman/tree/main/final/babalonianNumbers2_1 |
+| Another Brick | 2.2 | https://github.com/jackedup/AdvPy-jsleeman/tree/main/final/anotherbrick2_2 |
