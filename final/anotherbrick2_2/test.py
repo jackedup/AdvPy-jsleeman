@@ -2,7 +2,7 @@ import unittest
 import os
 import sys
 import main as kattis
-class TestSecrets(unittest.TestCase):
+class TestBricks(unittest.TestCase):
     tests = [ ["test1.txt", "test1out.txt"],
                 ["test2.txt", "test2out.txt"],
                 ["test3.txt", "test3out.txt"]
